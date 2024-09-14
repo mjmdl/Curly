@@ -9,3 +9,8 @@ App for testing HTTP/REST APIs.
 
 ./curly
 ```
+
+## Dependencies
+
+- gtk4
+- libcurl
