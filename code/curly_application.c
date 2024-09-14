@@ -3,8 +3,7 @@
 #include "curly_application.h"
 #include "curly_application_window.h"
 
-struct _CurlyApplication
-{
+struct _CurlyApplication {
 	GtkApplication parent;
 };
 
