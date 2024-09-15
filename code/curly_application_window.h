@@ -9,7 +9,8 @@ G_BEGIN_DECLS
 
 #define CURLY_TYPE_APPLICATION_WINDOW (curly_application_window_get_type())
 
-G_DECLARE_FINAL_TYPE(CurlyApplicationWindow, curly_application_window, CURLY, APPLICATION_WINDOW, GtkApplicationWindow)
+G_DECLARE_FINAL_TYPE(CurlyApplicationWindow, curly_application_window,
+					 CURLY, APPLICATION_WINDOW, GtkApplicationWindow)
 
 GtkWidget *curly_application_window_new(CurlyApplication *app);
 

@@ -7,7 +7,8 @@ G_BEGIN_DECLS
 
 #define CURLY_TYPE_APPLICATION (curly_application_get_type())
 
-G_DECLARE_FINAL_TYPE(CurlyApplication, curly_application, CURLY, APPLICATION, GtkApplication)
+G_DECLARE_FINAL_TYPE(CurlyApplication, curly_application,
+					 CURLY, APPLICATION, GtkApplication)
 
 GApplication *curly_application_new(void);
 

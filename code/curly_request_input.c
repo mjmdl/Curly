@@ -11,11 +11,13 @@ struct _CurlyRequestInput {
 
 G_DEFINE_TYPE(CurlyRequestInput, curly_request_input, GTK_TYPE_BOX)
 
-static void curly_request_input_sender_clicked(GtkButton *sender, CurlyRequestInput *input)
+static void
+curly_request_input_sender_clicked(GtkButton *sender, CurlyRequestInput *input)
 {
 	guint selected = gtk_drop_down_get_selected(GTK_DROP_DOWN(input->verbs));
 	GListModel *model = gtk_drop_down_get_model(GTK_DROP_DOWN(input->verbs));
-	const gchar *verb = gtk_string_list_get_string(GTK_STRING_LIST(model), selected);
+	const gchar *verb = gtk_string_list_get_string(GTK_STRING_LIST(model),
+												   selected);
 	if (!verb || verb[0] == '\0') {
 		g_print("An invalid verb was selected!\n");
 		return;
@@ -100,7 +102,9 @@ static void curly_request_input_init(CurlyRequestInput *input)
 		g_error("Could not load the sender button widget.\n");
 		return;
 	}
-	g_signal_connect(sender, "clicked", G_CALLBACK(curly_request_input_sender_clicked), input);
+	g_signal_connect(sender, "clicked",
+					 G_CALLBACK(curly_request_input_sender_clicked),
+					 input);
 }
 
 static void curly_request_input_class_init(CurlyRequestInputClass *class)
@@ -109,9 +113,8 @@ static void curly_request_input_class_init(CurlyRequestInputClass *class)
 
 GtkWidget *curly_request_input_new(void)
 {
-	return g_object_new(
-		CURLY_TYPE_REQUEST_INPUT,
-		"orientation", GTK_ORIENTATION_VERTICAL,
-		"spacing", 0,
-		NULL);
+	return g_object_new(CURLY_TYPE_REQUEST_INPUT,
+						"orientation", GTK_ORIENTATION_VERTICAL,
+						"spacing", 0,
+						NULL);
 }

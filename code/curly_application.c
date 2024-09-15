@@ -26,13 +26,12 @@ static void curly_application_class_init(CurlyApplicationClass *class)
 
 GApplication *curly_application_new(void)
 {
-	return g_object_new(
-		CURLY_TYPE_APPLICATION,
-		"application-id", "com.github.mjmdl.curly",
+	return g_object_new(CURLY_TYPE_APPLICATION,
+						"application-id", "com.github.mjmdl.curly",
 #ifdef G_APPLICATION_DEFAULT_FLAGS
-		"flags", G_APPLICATION_DEFAULT_FLAGS,
+						"flags", G_APPLICATION_DEFAULT_FLAGS,
 #else
-		"flags", G_APPLICATION_FLAGS_NONE,
+						"flags", G_APPLICATION_FLAGS_NONE,
 #endif
-		NULL);
+						NULL);
 }
